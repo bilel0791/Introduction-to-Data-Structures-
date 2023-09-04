@@ -1,0 +1,39 @@
+ALGORITHM Problem1
+VAR
+// declaration de varaible a utiliser 
+    set1,set2,setDistinct: ARRAY_OF INTEGER[50];
+    i,j,k:INTEGER:=0; 
+// sum de element different 
+    sum:INTEGER:=0 
+
+BEGIN
+// initialisation des tableaux avec les valeurs entrées par l'utilisateur
+    Read(set1);
+    Read(set2);
+//on compare les element de tableau set1 avec set2 si l'element nexiste pas on lajoute dans un  tableux setdistict et on ajout cet element au somme
+    FOR i from 0 TO set1.lenght- 1 DO
+        For j from 0 TO set2.lenght DO
+        IF (set1[i]<>set2[j]) THEN
+            
+            setDistinct[k]:=set1[i];
+            k:=k+1;
+            sum:=sum+1;
+
+        END_IF
+    END_FOR
+    //on compare les element de tableau set1 avec set2 si l'element nexiste pas on lajoute dans un  tableux setdistict et on ajout cet element au somme
+    FOR i from 0 TO set2.lenght- 1 DO
+        For j from 0 TO set1.lenght-1 DO
+        IF (set1[i]<>set2[j]) THEN
+            
+            setDistinct[k]:=set2[i];
+            k:=k+1;
+            sum:=sum+1;
+
+        END_IF
+    END_FOR     
+write(sum)
+write(setDistinct)
+
+
+END
